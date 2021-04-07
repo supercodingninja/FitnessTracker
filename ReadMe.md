@@ -52,6 +52,20 @@ This is a book about JavaScript, programming, and digital wonders. Read it onlin
 
 6.  [Markdown Syntax](https://www.markdownguide.org/basic-syntax/) provides documentations on how to add your shield, for creditbility.  Please feel free to view this resource, for your future developments.
 
+### Key Topics
+* NoSQL
+* MongoDB
+* Object-document mapping
+* Mongoose.js
+* CRUD
+
+### Helpful Links
+* [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
+* [MongoDB Website](https://www.mongodb.com/)
+* [Robo 3T Website](https://robomongo.org/download)
+* [MongoJS Documentation](https://www.npmjs.com/package/mongojs)
+* [Mongoose Documentation](http://mongoosejs.com/docs/guide.html)
+
 
 ## Ackowledgements
 ###### [Back to Table of Contents](#Table-of-Contents)
