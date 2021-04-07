@@ -1,7 +1,6 @@
 {
   "name": "mongoose_skeleton",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +11,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.1",
+    "logger": "^0.0.1",
     "mongoose": "^5.3.16",
-    "morgan": "^1.9.1"
-  }
+    "morgan": "^1.10.0",
+    "node": "^15.12.0",
+    "nodejs": "^0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supercodingninja/FitnessTracker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/supercodingninja/FitnessTracker/issues"
+  },
+  "homepage": "https://github.com/supercodingninja/FitnessTracker#readme",
+  "description": ""
 }
