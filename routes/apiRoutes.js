@@ -27,7 +27,7 @@ router.get('/api/workouts', (req, res) => {
 // C. R. U. D.!  Think PUT: "Update"! //
 router.put('/api/workouts/:id', ({ body, params }, res) => {
    
-    workOut.update(
+    db.findByIdAndUpdate(
    
         params.id,
    
@@ -55,7 +55,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
 // C. R. U. D.!  Think CREATE: "Create"! //
 router.post('/api/workouts', (req, res) => {
     
-    workout.create({})
+    db.create({})
     
     .then(workoutData => {
     
@@ -74,7 +74,7 @@ router.post('/api/workouts', (req, res) => {
 // Need Ranges. //
 router.get('/api/workouts/range', (res) => {
 
-    workout.find({}).limit(10)
+    db.find({}).limit(10)
 
     .then(workoutData => {
 
@@ -91,7 +91,7 @@ router.get('/api/workouts/range', (res) => {
 
 
 // C. R. U. D.!  Think: You're  to need DELETE: "Delete! //"
-router.delete('/api/workouts', ({ body }, res) => {
+router.findByIdAndDelete('/api/workouts', ({ body }, res) => {
  
     workout.delete(body.id)
  
