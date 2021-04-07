@@ -14,7 +14,7 @@ router.get('./stats'), (res) => {
 
 
 // I need to get the exercises displayed. //
-router.get('./exercise'), (res) => {
+router.get('../public/exercise.js'), (res) => {
 
     res.sendFile(path.join(__dirname, '../public/exercise.html'));
 
