@@ -6,7 +6,7 @@ const db = require('../models/workout.js');
 
 //  Use Ref. https://mongoosejs.com/docs/validation.html //
 // C. R. U. D.!  Think GET: "Read".  Think about what you have to next. //
-router.get('./api/workout', (req, res) => {
+router.get('/api/workouts', (req, res) => {
     
     db.find()
     
@@ -25,7 +25,7 @@ router.get('./api/workout', (req, res) => {
 
 
 // C. R. U. D.!  Think PUT: "Update"! //
-router.put('/api/workout/:id', ({ body, params }, res) => {
+router.put('/api/workouts/:id', ({ body, params }, res) => {
    
     workOut.update(
    
