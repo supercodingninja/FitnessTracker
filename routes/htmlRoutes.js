@@ -1,23 +1,15 @@
-'use strict';
+//create router object with router constructer function
+const router = require("express").Router();
+const path = require("path");
 
-// Think!  What have we not done...Set up the path to the document! //
-const path = require('path');
-const router = require('express').Router();
+// route display all execise
+router.get("/exercise", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
+});
 
-
-// This should render all stats to the document. //
-router.get('./stats'), (req, res) => {
-
-    res.sendFile(path.join(__dirname, '../public/stats.html'));
-
-};
-
-
-// I need to get the exercises displayed. //
-router.get('/exercise'), (req, res) => {
-
-    res.sendFile(path.join(__dirname, '../public/exercise.html'));
-
-};
+// route disply states
+router.get("/stats", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/stats.html"));
+});
 
 module.exports = router;

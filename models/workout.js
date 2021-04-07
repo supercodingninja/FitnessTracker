@@ -1,85 +1,86 @@
-const mongoose = require("mongoose")
+// INSTALL YOUR PACKAGES. //
+const mongoose = require("mongoose");
 
-const workoutSchema = mongoose.Schema({
-    
+
+// CALL THE WORKOUT SCHEMA, CHIEF! //
+const Schema = mongoose.Schema;
+
+// Here comes the craziness.  You need to create more objects, that each have their own properties; and each of those properties have multiple values.  DON'T GO ROGUE: PAY ATTENTION TO THE DEVELOPED CODE (See .html files) //
+// See exercise.html. //
+const workoutSchema = new Schema ({
+        
     day: {
-        
+    
         type: Date,
-        
-        default:  () => new Date()
+    
+        defualt: () => new Date()
     
     },
 
-
-    // Here comes the craziness.  You need to create more objects, that each have their own properties; and each of those properties have multiple values.  DON'T GO ROGUE: PAY ATTENTION TO THE DEVELOPED CODE (See .html files) //
-    // See exercise.html. //
-    exercises: {
-
-        type: {
-
-            type: String,
+        exercise: [{
+                
+            type: {
             
-            // Ref. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim //
-            trim: true,
-
-            required: 'Exercise Type:'
-
-        },
-
-        cardioName: {
-
-            type: String,
+                type: String,
             
-            trim: true,
+                // Ref. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim //
+                trim: true,
+            
+                required: "Exercise type"
+            
+            },
 
-            required: 'Name'
+                // Exercise Name, See Ln 50 exercise.html //
+                name: {
 
-        },
+                    type:String,
 
-        distance: {
+                    trim: true,
 
-            type: Number,
+                    required: "Exercise name"
 
-        },
+                },
 
-        duration: {
+                duration: {
 
-            type: Number,
+                    type: Number,
 
-        },
+                    required: "Duration in minutes"
 
-        // Exercise Name, See Ln 50 exercise.html //
-        name: {
+                },
 
-            type: String,
+                weight: {
 
-            trim: true,
+                    type: Number
 
-            required: 'name:'
+                },
 
-        },
+                reps: {
 
-        weight: {
+                    type: Number
 
-            type: Number,
+                },
 
-        },
+                sets: {
 
-        sets: {
+                    type: Number
 
-            type: Number
+                },
 
-        },
+                distance: {
 
-        resistanceDuration: {
+                    type: Number
 
-            Number
+                }
+        } ]
+    },
+);
 
-        }
 
-    }
-})
-
-const Workout = mongoose.model("Workout", workoutSchema);
+// YOU DID NOT PROPERLY EXPORT THE MODULE: I never defined it. //
+const Workout = mongoose.model('Workout', workoutSchema);
 
 module.exports = Workout;
+
+
+

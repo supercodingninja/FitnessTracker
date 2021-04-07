@@ -1,31 +1,33 @@
-'use strict';
+// Dependencies
+const express = require("express");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 
-// This is where you need to remember that weird name for a middleware request, "Morgan."  See Ref. https://www.npmjs.com/package/morgan This is the HTTP request logger middleware for node.js).
-const logger = require('morgan');
-const express = require('express');
+// Create port for heroku and local
+const PORT = process.env.PORT || 3000;
+
+// // Path using all files in model folders
+
 const app = express();
-const mongoose = require('mongoose');
-const PORT = process.env.PORT || 3001;
 
+app.use(logger("dev"));
 
-// See Ref. https://gist.github.com/leommoore/7524073 //
-app.use(logger('dev'));
-app.use(require('./routes/htmlRoutes.js'));
-app.use(require('./routes/apiRoutes.js'));
-app.use(express.static('./public'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost/workout', {
-
+//Mongoose connect database
+mongoose.connect("mongodb://localhost/workout", {
     useNewUrlParser: true,
-
 });
 
+// routes
+app.use(require("./routes/htmlRoutes.js"));
+app.use(require("./routes/apiRoutes.js"));
 
 app.listen(PORT, () => {
-  
     console.log(`App running on port ${PORT}!`);
+})
 
-});
+
