@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 
 // This should render all stats to the document. //
-router.get('./stats'), (res) => {
+router.get('./stats'), (req, res) => {
 
     res.sendFile(path.join(__dirname, '../public/stats.html'));
 
@@ -14,7 +14,7 @@ router.get('./stats'), (res) => {
 
 
 // I need to get the exercises displayed. //
-router.get('../public/exercise.js'), (res) => {
+router.get('/exercise'), (req, res) => {
 
     res.sendFile(path.join(__dirname, '../public/exercise.html'));
 
